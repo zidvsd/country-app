@@ -1,10 +1,13 @@
 import React from "react";
-
+import { BrowserRouter } from "react-router-dom";
+import Router from "./routes/Router";
 const App = () => {
   return (
-    <div className="container mx-auto  w-full">
-      <h1 className="text-md font-nunito-sans max-w-small">hi</h1>
-    </div>
+    <BrowserRouter>
+      <div className=" w-full font-nunito-sans ">
+        <Router />
+      </div>
+    </BrowserRouter>
   );
 };
 
