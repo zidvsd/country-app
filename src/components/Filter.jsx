@@ -20,9 +20,18 @@ const Filter = () => {
     <div className="inline-block text-left font-semibold">
       <button
         onClick={toggleDropdown}
-        className="cursor-pointer px-4 py-2 bg-white text-black rounded-md focus:outline-none shadow-md w-auto dark:bg-dark-blue dark:text-white"
+        className=" flex flex-row gap-x-4 cursor-pointer px-4 py-2 bg-white text-black rounded-md focus:outline-none shadow-md w-auto dark:bg-dark-blue dark:text-white"
       >
         {selectedRegion}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 -960 960 960"
+          width="24px"
+          className="dark:fill-white fill-black"
+        >
+          <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+        </svg>
       </button>
 
       {isOpen && (
