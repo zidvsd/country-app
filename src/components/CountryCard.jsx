@@ -1,8 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const CountryCard = ({ img, country, population, region, capital }) => {
+  const normalizeText = (country) => {
+    return country
+      .normalize("NFD") // Split accented letters into parts
+      .replace(/[\u0300-\u036f]/g, "") // Remove diacritics
+      .replace(/[^\w\s-]/g, "") // Remove special characters except dash/underscore/space
+      .trim()
+      .replace(/\s+/g, "-") // Remove multiple spaces
+      .toLowerCase();
+  };
+
   return (
-    <Link to={`/child`}>
+    <Link to={`/country/${normalizeText(country)}`}>
       <div className="flex flex-col max-h-fit md:h-full md:max-h-auto dark:text-white items-start mx-auto w-[80%] md:w-[90%] lg:w-[100%] shadow-md rounded-bl-md rounded-br-md cursor-pointer hover:scale-110 transition-all ease-in-out duration-300">
         <img
           src={img}
@@ -15,7 +25,10 @@ const CountryCard = ({ img, country, population, region, capital }) => {
           <h1 className="font-bold md:my-auto text-xl">{country}</h1>
           <p className="text-sm">
             <span className="font-semibold"> Population: </span>
-            <span className="dark:text-dark-gray"> {population}</span>
+            <span className="dark:text-dark-gray">
+              {" "}
+              {population.toLocaleString()}
+            </span>
           </p>
           <p className="text-sm">
             <span className="font-semibold"> Region: </span>

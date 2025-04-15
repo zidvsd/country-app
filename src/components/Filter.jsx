@@ -6,13 +6,13 @@ const Filter = () => {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+
   const handleRegionSelect = (region) => {
-    setSelectedRegion(region);
-    setIsOpen(false);
     if (region === "All") {
       setSelectedRegion("Filter by Region");
     } else {
-      selectedRegion(region);
+      setSelectedRegion(region);
+      setIsOpen(false);
     }
   };
   const countries = ["All", "Africa", "America", "Asia", "Europe", "Oceania"];
@@ -36,12 +36,12 @@ const Filter = () => {
 
       {isOpen && (
         <div className="w-auto mt-2  dark:text-white  bg-dark-blue shadow-md   ">
-          <ul className="rounded-md">
+          <ul className="rounded-md relative">
             {countries.map((region, index) => (
               <li key={index}>
                 <a
                   onClick={() => handleRegionSelect(region)}
-                  className="block px-4 py-2 bg-white dark:bg-dark-blue dark:text-white hover:bg-neutral-500 cursor-pointer"
+                  className="px-4 py-2 bg-white dark:bg-dark-blue dark:text-white hover:bg-neutral-500 cursor-pointer block"
                 >
                   {region}
                 </a>
