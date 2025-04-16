@@ -27,7 +27,7 @@
   <h3>Steps</h3>
   <ol>
     <li>Clone the repository:
-      <pre><code>git clone https://github.com/yourusername/country-info-app.git</code></pre>
+      <pre><code>git clone https://github.com/zidvsd/country-info-app.git</code></pre>
     </li>
     <li>Navigate to the project folder:
       <pre><code>cd country-info-app</code></pre>
