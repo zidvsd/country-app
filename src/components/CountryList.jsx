@@ -12,7 +12,6 @@ const CountryList = ({ selectedRegion, setSelectedRegion }) => {
     const timer = setTimeout(() => {
       setDebouncedInput(inputValue);
     }, 300); // 300ms debounce time (can be adjusted)
-    console.log("hello");
 
     // Cleanup function to clear the timeout if the input changes before the timeout
     return () => clearTimeout(timer);
