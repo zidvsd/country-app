@@ -1,21 +1,20 @@
 import React, { useState } from "react";
-
-const Filter = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedRegion, setSelectedRegion] = useState("Filter by Region");
+import { useEffect } from "react";
+const Filter = ({ isOpen, setIsOpen, selectedRegion, setSelectedRegion }) => {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
   const handleRegionSelect = (region) => {
     if (region === "All") {
-      setSelectedRegion("Filter by Region");
+      setSelectedRegion("All");
     } else {
       setSelectedRegion(region);
-      setIsOpen(false);
     }
+    setIsOpen(false);
   };
-  const countries = ["All", "Africa", "America", "Asia", "Europe", "Oceania"];
+
+  const countries = ["All", "Africa", "Americas", "Asia", "Europe", "Oceania"];
   return (
     <div className="inline-block text-left font-semibold">
       <button
