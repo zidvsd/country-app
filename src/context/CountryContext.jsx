@@ -13,7 +13,6 @@ export const CountryProvider = ({ children }) => {
       try {
         const res = await fetch("/data.json");
         const data = await res.json();
-        console.log(data);
         setCountry(data);
       } catch (error) {
         console.log("Unable to fetch api" + error);

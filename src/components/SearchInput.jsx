@@ -7,9 +7,7 @@ const SearchInput = () => {
     const formattedText = formatText(event.target.value);
     setInputValue(formattedText);
   };
-  useEffect(() => {
-    console.log(inputValue);
-  }, [inputValue]);
+
   return (
     <>
       <label className="bg-white dark:bg-dark-blue shadow-md input w-full md:w-1/2 flex flex-row items-center justify-start  gap-x-4 dark:text-white rounded-md px-4  ">
